@@ -15,5 +15,5 @@ jobs:
       - name: Update LeetCode Stats
         uses: Gurupawar/leetcode-stats@v2.1.3
         with:
-          leetcode-username: "Souloleveling" 
+          leetcode-username: "HLP6GfpmhA" 
           update-readme: true
