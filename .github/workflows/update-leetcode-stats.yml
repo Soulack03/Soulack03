@@ -1,1 +1,25 @@
 
+name: Update LeetCode Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs once a day at midnight UTC
+  workflow_dispatch:      # Allows you to click "Run workflow" manually anytime
+
+jobs:
+  update-readme:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update LeetCode Stats
+        uses: gnames/leetcode-readme-stats@v1
+        with:
+          LEETCODE_USERNAME: "Souloleveling"
+          SHOW_RANK: "true"
+          SHOW_SOLVED: "true"
+          SHOW_SYMBOLS: "true" # Adds simplified/traditional Chinese symbols if you want (optional)
+          # Note: This specific action updates a text section in your README.
