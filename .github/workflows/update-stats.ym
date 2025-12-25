@@ -1,0 +1,19 @@
+name: Update LeetCode Stats
+on:
+  schedule:
+    - cron: "0 0 * * *" 
+  workflow_dispatch:     
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update LeetCode Stats
+        uses: gnames/leetcode-readme-stats@v1
+        with:
+          LEETCODE_USERNAME: "Souloleveling"
+          SHOW_rank: "true"
+          SHOW_solved: "true"
